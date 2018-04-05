@@ -1,0 +1,45 @@
+# defaults/main.yml
+---
+# ufw_rules:
+#   - { port: "", rule: allow, proto: any, from_ip: any, to_ip: any, comment: "" }
+# ufw_applications:
+#   - { name: "OpenSSH", rule: allow }
+#
+
+# list of rules
+ufw_rules: []
+# list of profiles located in /etc/ufw/applications.d
+ufw_applications:
+  - { name: "OpenSSH", rule: allow }
+
+
+# /etc/defaut/ufw settings.
+
+# Set to yes to apply rules to support IPv6
+# (no means only IPv6 on loopback
+# accepted).
+ufw_ipv6: "yes"
+# Set the default input policy
+# ACCEPT | DROP | REJECT
+ufw_default_input_policy: DROP
+# Set the default output policy
+# ACCEPT | DROP | REJECT
+ufw_default_output_policy: ACCEPT
+# Set the default forward policy
+# ACCEPT | DROP | REJECT
+ufw_default_forward_policy: DROP
+# Set the default application policy
+# ACCEPT | DROP | REJECT | SKIP
+ufw_default_application_policy: SKIP
+# firewall state: enabled | disabled
+ufw_state: enabled
+# ufw service state
+ufw_service_state: "started"
+# ufw service enabled
+ufw_service_enabled: "yes"
+# firewall logging
+# on | off | low | medium | high | full
+ufw_logging: "off"
+# Strictly enforce listed rules
+# false will only append changes configured by this role
+ufw_strict: false

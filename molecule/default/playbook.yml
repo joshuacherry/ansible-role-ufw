@@ -1,0 +1,16 @@
+---
+- name: Converge
+  hosts: all
+  roles:
+    - role: ansible-role-ufw
+  vars:
+    ufw_state: enabled
+    ufw_ipv6: "no"
+    ufw_default_forward_policy: ACCEPT
+    ufw_logging: low
+    ufw_strict: true
+    ufw_rules:
+      - { port: 22, rule: allow, comment: "OpenSSH" }
+      - { port: 80, rule: allow, comment: "http" }
+      - { port: 443, rule: allow, comment: "https" }
+    ufw_applications: []
