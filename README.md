@@ -2,13 +2,17 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Build Status](https://travis-ci.org/joshuacherry/ansible-role-ufw.svg?branch=master)](https://travis-ci.org/joshuacherry/ansible-role-ufw)
-![Ansible](https://img.shields.io/badge/ansible-2.4.3.0-green.svg)
+![Ansible](https://img.shields.io/badge/ansible-2.4.3.0-blue.svg)
+![Ansible](https://img.shields.io/badge/ansible-2.5.0-blue.svg)
 
 Configures [UFW - Uncomplicated Firewall](https://help.ubuntu.com/community/UFW) on an Ubuntu server.
 
 ## Requirements
 
-- Ansible >= 2.4.3.0
+- Ansible
+  - Tested Versions:
+    - 2.4.3.0
+    - 2.5.0
 
 ## Install
 
