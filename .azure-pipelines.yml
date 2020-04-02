@@ -1,0 +1,44 @@
+---
+# YAML schema reference
+# https://aka.ms/yaml
+
+trigger:
+  - master
+
+pool:
+  vmImage: 'Ubuntu-16.04'
+
+strategy:
+  matrix:
+    Ansible_2.8_Ubuntu16:
+      ANSIBLE: 2.8
+      OS: ubuntu1604
+    Ansible_2.9_Ubuntu16:
+      ANSIBLE: 2.9
+      OS: ubuntu1604
+    Ansible_2.8_Ubuntu18:
+      ANSIBLE: 2.8
+      OS: ubuntu1804
+    Ansible_2.9_Ubuntu18:
+      ANSIBLE: 2.9
+      OS: ubuntu1804
+
+variables:
+  TOXENV: 'py38-ansible$(ANSIBLE)-$(OS)'
+
+steps:
+  - task: UsePythonVersion@0
+    inputs:
+      versionSpec: '3.8'
+      architecture: 'x64'
+  - script: sudo apt-get -qq update
+    displayName: 'Update Apt'
+  - script: |
+      pip install docker-py
+      pip install molecule
+      pip install tox
+      pip install ansible-lint
+      pip install flake8
+    displayName: 'Install dependencies'
+  - script: tox -e $(TOXENV)
+    displayName: 'Run Tox Tests'

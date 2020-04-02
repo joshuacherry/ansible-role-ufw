@@ -1,13 +1,30 @@
 ---
 language: python
 sudo: required
+dist: xenial
 services:
   - docker
+
+python:
+  - 3.8
+
+matrix:
+  fast_finish: true
+  include:
+    - { env: ANSIBLE=2.8 OS=ubuntu1604}
+    - { env: ANSIBLE=2.9 OS=ubuntu1604}
+
+    - { env: ANSIBLE=2.8 OS=ubuntu1804}
+    - { env: ANSIBLE=2.9 OS=ubuntu1804}
+
+
 before_install:
   - sudo apt-get -qq update
 install:
   - pip install tox-travis
   - pip install docker-py
   - pip install molecule
+  - pip install ansible-lint
+  - pip install flake8
 script:
   - tox

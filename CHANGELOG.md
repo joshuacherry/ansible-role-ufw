@@ -16,11 +16,27 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 
+## [2.0.0] - 2020-04-02
+
+### Added
+
+- Support for python 3.8 and ansible 2.9
+
+### Changed
+
+- Changed molecule version to 3.x
+
+### Removed
+
+- Removed support for ansible 2.5, 2.6, 2.7
+- Removed support for python 2.7
+
 ## [1.0.1] - 2018-05-09
 
 ### Changed
 
 - Changed Ansible version for tests
 
-[Unreleased]: https://github.com/joshuacherry/ansible-role-ufw/compare/1.0.1...HEAD
+[Unreleased]: https://github.com/joshuacherry/ansible-role-ufw/compare/2.0.0...HEAD
+[2.0.0]: https://github.com/joshuacherry/ansible-role-ufw/compare/1.0.1...2.0.0
 [1.0.1]: https://github.com/joshuacherry/ansible-role-ufw/compare/1.0.0...1.0.1
